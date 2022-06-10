@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "2fc7cf48-d441-4b3a-ba9c-2a926c8ca61f",
+		"name": "BookStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21164850"
+	},
+	"item": [
+		{
+			"name": "Authorized",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.environment.set(\"resource_path0\", \"/Account/v1/Authorized\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Shaheena@211",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Shahina",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Shaheena\",\r\n  \"password\": \"Shaheena@211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}{{resource_path0}}",
+					"host": [
+						"{{url}}{{resource_path0}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Shaheena@211",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Shahina",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Shaheena\",\r\n  \"password\": \"Shaheena@211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.toolsqa.com/Account/v1/GenerateToken",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"toolsqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"GenerateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUser",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Shahina\",\r\n  \"password\": \"Shaheena@211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.toolsqa.com/Account/v1/User",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"toolsqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Shaheena@211",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Shahina",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore.toolsqa.com/Account/v1/User/aedb1406-e2f0-4a80-a173-129dd4845c3f",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"toolsqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User",
+						"aedb1406-e2f0-4a80-a173-129dd4845c3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Shaheena@211",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Shahina",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"Shahina\",\r\n  \"password\": \"Shaheena@211\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore.toolsqa.com/Account/v1/User/aedb1406-e2f0-4a80-a173-129dd4845c3f",
+					"protocol": "https",
+					"host": [
+						"bookstore",
+						"toolsqa",
+						"com"
+					],
+					"path": [
+						"Account",
+						"v1",
+						"User",
+						"aedb1406-e2f0-4a80-a173-129dd4845c3f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
